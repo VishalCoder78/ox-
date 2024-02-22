@@ -1,0 +1,199 @@
+* {
+   margin: 0;
+   padding: 0; 
+}
+
+body {
+    background-color: #1B4965;
+    text-align: center;
+}
+
+.container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #FFF8F0;
+    color: #5FA8D3;
+}
+
+
+.btn {
+    background-color: #5FA8D3;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.win-modal{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.msg-cont {
+    margin: 5vmin;
+    background-color: #1B4965;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40vmin;
+}
+
+.msg {
+    font-size: 5vmin;
+    color: white;
+    padding-top: 10px;
+}
+
+.rematch{
+    background-color: #ff0000;
+    color: white;
+}
+
+.player-form {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.form-cont{
+    background-color: #5FA8D3;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.player {
+    padding: 3px;
+    width: 40vmin;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.submit-btn{
+    background-color: #1e293b;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.hide {
+    display: none;
+}
+
+#hide {
+    display: none;
+}
+
+.user-cont {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 20px;
+}
+
+.user {
+    border: 2px solid #090C02;
+    padding-left : 12px;
+    padding-right : 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 5px;
+    /* background: rgba(187, 197, 170, 0.5); */
+    background: rgb(187, 197, 170);
+}
+
+.scoreBoard{
+    display: flex;
+    justify-content: center;
+
+}
+
+.scr {
+    font-size: 40px;
+    padding-left : 18px;
+    padding-right : 18px;
+    color: white;
+}
+
+.scr1{
+    background-color: rgba(0, 0, 255, 0.7);
+    border: 2px solid blue;
+    border-radius: 4px;
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.scr2{
+    background-color: rgba(255, 0, 0, 0.7);
+    border: 2px solid red;
+    border-radius: 4px;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#user1{
+    background-color: blue;
+    color: white;
+}
+
+#user2{
+    background-color: red;
+    color: white;
+}
+
+.gold{
+    background-color: yellow;
+}
+
+.white{
+    background-color: #FFF8F0;
+}
+
+#new {
+    background-color: #FF8200;
+}
