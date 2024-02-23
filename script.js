@@ -33,24 +33,24 @@ const winPatterns = [
 
 
 const checkWinner = () => {
-    for(pattern of winPatterns) {
+    for (pattern of winPatterns) {
 
         let pos1val = boxes[pattern[0]].innerText;
         let pos2val = boxes[pattern[1]].innerText;
         let pos3val = boxes[pattern[2]].innerText;
 
-        if(pos1val != "" && pos2val != "" && pos3val != ""){
-            if(pos1val === pos2val && pos2val === pos3val) {
-                if(pos1val == '0') {
+        if (pos1val != "" && pos2val != "" && pos3val != "") {
+            if (pos1val === pos2val && pos2val === pos3val) {
+                if (pos1val == '0') {
                     winner = player1Name;
-                    msgtag.innerText ='Congratulation ' + winner +' Win';
+                    msgtag.innerText = 'Congratulation ' + winner + ' Win';
                     player1Score = player1Score + 1;
                     score1.forEach(score => {
                         score.innerText = player1Score
                     });
-                } else{
+                } else {
                     winner = player2Name;
-                    msgtag.innerText = winner +' Win'
+                    msgtag.innerText = winner + ' Win'
                     player2Score = player2Score + 1;
                     score2.forEach(score => {
                         score.innerText = player2Score
@@ -64,7 +64,7 @@ const checkWinner = () => {
 
 boxes.forEach(box => {
     box.addEventListener("click", () => {
-        if(turn0) {
+        if (turn0) {
             box.innerText = "0";
             turn0 = false
         } else {
@@ -80,7 +80,7 @@ function setPlayer() {
     let player1 = document.getElementById('player1').value;
     let player2 = document.getElementById('player2').value;
 
-    if(player1 != '' && player2 != '') {
+    if (player1 != '' && player2 != '') {
         player1Name = player1;
         player2Name = player2;
         formCont.classList.add('hide')
@@ -117,7 +117,7 @@ const resetGame = () => {
     enableBoxes()
 }
 
-const startNewGame = () =>{
+const startNewGame = () => {
     resetGame();
     msgCont.classList.add('hide');
     resetScore()
@@ -128,3 +128,19 @@ const rematch = () => {
     msgCont.classList.add('hide');
 
 }
+
+
+const socket = io();
+
+let userName = '';
+
+document.getElementById('start').addEventListener("click", function () {
+    userName = document.getElementById('name').ariaValueMax;
+
+    socket.emit("Find", { name: userName })
+    formCont.classList.add('hide')
+    gameCont.classList.remove('hide')
+    reset.classList.remove('hide')
+    newGame.classList.remove('hide')
+    scoreBoard.classList.remove('hide')
+})
